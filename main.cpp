@@ -1,3 +1,11 @@
+/*
+Author: Shahzaib Fareed
+Course: CSCI-135
+Instructor: Zamansky
+Assignment: Lab 10
+    Lab is an intro to classes and enums
+    I will create funcs as told using movie, Time, and TimeSlot classes
+*/
 #include "time.h"
 #include <iostream>
 

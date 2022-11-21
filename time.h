@@ -1,3 +1,11 @@
+/*
+Author: Shahzaib Fareed
+Course: CSCI-135
+Instructor: Zamansky
+Assignment: Lab 10
+    Header file.
+    As given by the lab.
+*/
 #pragma once
 #include <string>
 

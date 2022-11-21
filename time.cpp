@@ -1,3 +1,10 @@
+/*
+Author: Shahzaib Fareed
+Course: CSCI-135
+Instructor: Zamansky
+Assignment: Lab 10
+    Funcs for each task are below.
+*/
 #include "time.h"
 #include <iostream>
 #include <string>
