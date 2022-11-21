@@ -11,5 +11,13 @@ int main(){
 
     time0 = addMinutes(time0, 35);
     std::cout << time0.h << " " << time0.m << "\n"; // {3,05}
+
+    Movie movie1 = {"Back to the Future", COMEDY, 116};
+
+    TimeSlot morning = {movie1, {9, 15}};  
+
+    std::cout << getTimeSlot(morning) << "\n";
+
+    std::cout << getTimeSlot(scheduleAfter(morning, movie1)) << "\n";//should start at 11:11
     return 0;
 }

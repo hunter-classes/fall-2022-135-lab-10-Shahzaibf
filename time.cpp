@@ -1,5 +1,6 @@
 #include "time.h"
 #include <iostream>
+#include <string>
 
 int minutesSinceMidnight(Time time){
     int mins = 0;
@@ -20,4 +21,30 @@ Time addMinutes(Time time0, int min){
     }
     Time result = {h,m};
     return result;
+}
+
+std::string printMovie(Movie mv){
+    std::string g;
+    switch (mv.genre) {
+        case ACTION   : g = "ACTION"; break;
+        case COMEDY   : g = "COMEDY"; break;
+        case DRAMA    : g = "DRAMA";  break;
+        case ROMANCE  : g = "ROMANCE"; break;
+        case THRILLER : g = "THRILLER"; break;
+    }
+    return mv.title + " " + g + " (" + std::to_string(mv.duration) + " min)";
+}
+
+std::string getTimeSlot(TimeSlot ts){ 
+    std::string result = printMovie(ts.movie);
+    Time ending = addMinutes(ts.startTime, ts.movie.duration);
+    std::string end = std::to_string(ending.h) + ":" + std::to_string(ending.m);
+    result += " [starts at " + std::to_string(ts.startTime.h) + ":" + std::to_string(ts.startTime.m) + ", ends by " + end + "]";
+    return result;
+}
+
+TimeSlot scheduleAfter(TimeSlot ts, Movie nextMovie){ 
+    Time ending = addMinutes(ts.startTime,ts.movie.duration);
+    TimeSlot Newmovie = {nextMovie, ending};
+    return Newmovie;
 }
