@@ -14,10 +14,14 @@ int main(){
 
     Movie movie1 = {"Back to the Future", COMEDY, 116};
 
-    TimeSlot morning = {movie1, {9, 15}};  
+    TimeSlot morning = {movie1, {10, 40}};  
+    TimeSlot morning2 = {movie1, {9,15}};
 
     std::cout << getTimeSlot(morning) << "\n";
 
     std::cout << getTimeSlot(scheduleAfter(morning, movie1)) << "\n";//should start at 11:11
+
+    //should be true
+    timeOverlap(morning,morning2) ? std::cout << "OVERLAP\n" : std::cout << "NO OVERLAP\n";
     return 0;
 }

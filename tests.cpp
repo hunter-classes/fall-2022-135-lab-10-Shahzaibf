@@ -35,3 +35,17 @@ TEST_CASE("Task D"){
     CHECK(getTimeSlot(scheduleAfter(daytime,movie2)) == "Black Panther ACTION (134 min) [starts at 14:29, ends by 16:43]");
     CHECK(getTimeSlot(scheduleAfter(evening,movie2)) == "Black Panther ACTION (134 min) [starts at 18:59, ends by 21:13]");
 }
+
+TEST_CASE("Task E"){
+    Movie movie1 = {"Back to the Future", COMEDY, 116};
+    Movie movie2 = {"Black Panther", ACTION, 134};
+
+    TimeSlot morning = {movie1, {9, 15}};  
+    TimeSlot daytime = {movie2, {12, 15}}; 
+    TimeSlot evening = {movie2, {16, 45}}; 
+    TimeSlot morning2 = {movie1, {10, 15}};
+    
+    CHECK(timeOverlap(morning, daytime) == false);
+    CHECK(timeOverlap(daytime, evening) == false);
+    CHECK(timeOverlap(morning, morning2) == true);
+}
